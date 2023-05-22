@@ -9,4 +9,5 @@ export type TextInputProps = React.PropsWithChildren<{
   secondIcon?: TIcon;
   isDisabled?: boolean;
   isMaxWidthEnabled?: boolean;
+  isCreateMode?: boolean;
 }>;

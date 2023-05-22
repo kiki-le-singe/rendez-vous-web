@@ -12,7 +12,7 @@ function ClientContainer() {
     <Card flexDirection="column">
       <div className="inputs-container">
         <Icon icon={clientIcon} />
-        <TextInput placeholder="Choisir un client" />
+        <TextInput placeholder="Choisir un client" isCreateMode />
         <TextInput
           type="tel"
           icon={flagIcon}

@@ -11,15 +11,24 @@ export default function TextInput({
   type = "text",
   name = "client",
   isMaxWidthEnabled = false,
+  isCreateMode = false,
 }: TextInputProps) {
+  const [isTyping, setIsTyping] = React.useState(false);
+
   const hasIcons = icon || secondIcon;
   const disabledClassName = "disabled";
   const classNameContainer = `TextInput-container ${
     isMaxWidthEnabled && "max-width"
-  } ${isDisabled && disabledClassName}`;
+  } ${isDisabled && disabledClassName} ${
+    isCreateMode && isTyping ? "create" : ""
+  }`;
   const classNameInput = `${hasIcons ? "width-icons" : ""}  ${
     isDisabled && disabledClassName
   }`;
+
+  function handleChange() {
+    setIsTyping(true);
+  }
 
   return (
     <div className={classNameContainer}>
@@ -36,6 +45,7 @@ export default function TextInput({
         name={name}
         placeholder={placeholder}
         disabled={isDisabled}
+        onChange={handleChange}
       />
     </div>
   );

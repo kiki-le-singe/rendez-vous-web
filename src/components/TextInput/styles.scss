@@ -19,6 +19,10 @@
     background-color: colors.$border-color;
   }
 
+  &.create {
+    border-color: colors.$green;
+  }
+
   input {
     flex: 1;
     border: none;
