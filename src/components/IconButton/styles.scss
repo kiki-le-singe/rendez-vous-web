@@ -1,0 +1,21 @@
+@use "../../styles/colors.scss";
+
+.Icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid colors.$border-color-dark;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &.Icon-button-green {
+    background-color: colors.$green;
+    border: 0px solid colors.$green;
+  }
+
+  &.Icon-button-light {
+    background-color: colors.$background-white-color;
+  }
+}

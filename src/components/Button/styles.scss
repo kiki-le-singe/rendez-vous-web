@@ -1,0 +1,36 @@
+@use "../../styles/colors.scss";
+
+.Button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  color: colors.$background-white-color;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+
+  &.green {
+    background-color: colors.$green;
+  }
+  &.red {
+    background-color: colors.$red;
+  }
+  &.dark-blue {
+    background-color: colors.$darkBlue;
+  }
+  &.light {
+    background-color: colors.$background-white-color;
+    border: 1px solid colors.$text-color;
+    color: colors.$text-color;
+  }
+  &.label {
+    color: colors.$background-white-color;
+  }
+  &.light-label {
+    color: colors.$green;
+  }
+  &.big {
+    height: 56px;
+  }
+}

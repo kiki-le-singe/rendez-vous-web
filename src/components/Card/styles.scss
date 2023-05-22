@@ -1,0 +1,13 @@
+@use "../../styles/colors.scss";
+
+.Card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 20px 20px 0px;
+  background: colors.$background-white-color;
+  width: "100%";
+  padding: 0 20px;
+  border: 1px solid colors.$border-color;
+  border-radius: 8px;
+}

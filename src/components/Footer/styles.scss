@@ -1,0 +1,29 @@
+@use "../../styles/colors.scss";
+
+.App-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80px;
+  background: colors.$background-grey-color;
+  border-top: 1px solid colors.$border-color;
+  border-radius: 0px 0px 12px 12px;
+  padding: 0 28px;
+
+  .Footer-left {
+    flex: 1;
+    display: flex;
+    gap: 8px;
+  }
+
+  .Footer-divider {
+    width: 1px;
+    background-color: colors.$border-color;
+    margin: 0 8px;
+  }
+
+  .Footer-right {
+    display: flex;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,21 @@
+@use "./styles/colors.scss";
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .View {
+    width: 1100px;
+    background-color: colors.$background-grey-color;
+    border-radius: 12px;
+  }
+
+  .View-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 28px;
+    gap: 8px;
+  }
+}

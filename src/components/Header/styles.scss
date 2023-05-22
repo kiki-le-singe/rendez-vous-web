@@ -1,0 +1,26 @@
+@use "../../styles/colors.scss";
+
+.App-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: colors.$background-white-color;
+  border-bottom: 1px solid colors.$border-color;
+  border-radius: 12px 12px 0px 0px;
+  padding: 0px 28px;
+
+  .title {
+    flex: 1;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+    color: colors.$text-color;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+}

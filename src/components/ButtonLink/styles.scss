@@ -1,0 +1,15 @@
+@use "../../styles/colors.scss";
+
+.ButtonLink {
+  display: flex;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: colors.$text-color;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 10px;
+}
