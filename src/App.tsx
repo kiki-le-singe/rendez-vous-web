@@ -3,6 +3,7 @@ import "./App.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
+import ClientContainer from "./components/ClientContainer";
 
 function App() {
   return (
@@ -11,12 +12,12 @@ function App() {
         <Header />
 
         <div className="View-content">
+          <ClientContainer />
+
           <Card>
             <p>Card Content</p>
           </Card>
-          <Card>
-            <p>Card Content</p>
-          </Card>
+
           <Card>
             <p>Card Content</p>
           </Card>

@@ -1,3 +1,5 @@
+export type flexDirectionValues = "row" | "column";
+
 export type CardProps = React.PropsWithChildren<{
-  stylesContainer?: object;
+  flexDirection?: flexDirectionValues;
 }>;

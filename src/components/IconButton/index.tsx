@@ -1,3 +1,4 @@
+import Icon from "../Icon";
 import "./styles.scss";
 import { IconButtonProps } from "./types";
 
@@ -6,7 +7,7 @@ function IconButton({ icon = undefined, theme = "light" }: IconButtonProps) {
 
   return (
     <button className={`Icon-button Icon-button-${theme}`}>
-      <img src={icon} alt={icon} />
+      <Icon icon={icon} />
     </button>
   );
 }

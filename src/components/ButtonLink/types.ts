@@ -1,5 +1,7 @@
+import { TIcon } from "../Icon/types";
+
 export type ButtonLinkProps = {
-  icon?: string | undefined;
+  icon?: TIcon;
   onClick?: () => void;
   text: string;
 };

@@ -2,6 +2,7 @@ import React from "react";
 
 import { ButtonLinkProps } from "./types";
 import "./styles.scss";
+import Icon from "../Icon";
 
 export default function ButtonLink({
   icon = undefined,
@@ -14,7 +15,7 @@ export default function ButtonLink({
 
   return (
     <button onClick={handleClick} className="ButtonLink">
-      <img src={icon} alt={icon} /> <span className="label">{text}</span>
+      <Icon icon={icon} /> <span className="label">{text}</span>
     </button>
   );
 }
