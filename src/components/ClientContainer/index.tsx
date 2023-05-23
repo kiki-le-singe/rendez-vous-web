@@ -12,6 +12,7 @@ import Tabs from "../Tabs";
 import genderIcon from "../../assets/svg/gender.svg";
 import bdayIcon from "../../assets/svg/bday.svg";
 import DoubleInputs from "../DoubleInputs";
+import Switch from "../Switch";
 
 const tabsData = ["Homme", "Femme", "Enfant"];
 
@@ -62,6 +63,8 @@ function ClientContainer() {
           <div className="step">
             <Tabs labels={tabsData} icon={genderIcon} />
             <DoubleInputs icon={bdayIcon} />
+            <Switch id="sms-rappel" label="SMS de rappel" checked />
+            <Switch id="sms-marketing" label="SMS marketing" />
           </div>
         </div>
       )}
