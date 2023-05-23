@@ -1,0 +1,27 @@
+@use "../../../../styles/colors.scss";
+
+.Tab-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: colors.$background-grey-color;
+  cursor: pointer;
+  width: 100px;
+  height: 48px;
+
+  &.selected-tab {
+    background-color: colors.$background-white-color;
+  }
+
+  .label {
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: colors.$placeholder;
+
+    &.selected-label {
+      color: colors.$text-color;
+    }
+  }
+}

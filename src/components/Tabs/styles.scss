@@ -1,0 +1,44 @@
+@use "../../styles/colors.scss";
+
+$borderRadius: 6px;
+$borderWidth: 1px;
+$borderColor: colors.$border-color;
+$border: $borderWidth solid $borderColor;
+
+.Tabs {
+  @mixin border-left-radius {
+    border-top-left-radius: $borderRadius;
+    border-bottom-left-radius: $borderRadius;
+  }
+  @mixin border-right-radius {
+    border-top-right-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+  }
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+
+  .items {
+    @include border-left-radius;
+    @include border-right-radius;
+
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    border: $border;
+  }
+
+  .first-tab {
+    @include border-left-radius;
+
+    border-right: $border;
+  }
+
+  .last-tab {
+    @include border-right-radius;
+
+    border-left: $border;
+  }
+}

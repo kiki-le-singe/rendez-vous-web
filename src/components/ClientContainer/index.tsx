@@ -8,6 +8,10 @@ import binIcon from "../../assets/svg/bin.svg";
 import "./styles.scss";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
+import Tabs from "../Tabs";
+import genderIcon from "../../assets/svg/gender.svg";
+
+const tabsData = ["Homme", "Femme", "Enfant"];
 
 function ClientContainer() {
   const [isCreateModeEnabled, setIsCreateModeEnabled] = React.useState(false);
@@ -17,7 +21,7 @@ function ClientContainer() {
   }
 
   return (
-    <Card flexDirection="column">
+    <Card className="Client-container" flexDirection="column">
       <div className="inputs-container">
         <Icon icon={clientIcon} />
         <TextInput
@@ -52,7 +56,9 @@ function ClientContainer() {
       </div>
 
       {isCreateModeEnabled && (
-        <div className="create-client-container">Info client</div>
+        <div className="create-client-container">
+          <Tabs labels={tabsData} icon={genderIcon} />
+        </div>
       )}
     </Card>
   );
