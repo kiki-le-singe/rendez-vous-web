@@ -6,7 +6,7 @@ export default function Button({
   label,
   theme = "light",
   onClick = () => {},
-  display = "small",
+  display = "medium",
 }: ButtonProps) {
   return (
     <button className={`Button ${theme} ${display}`} onClick={onClick}>

@@ -1,5 +1,5 @@
 export type themeValues = "green" | "red" | "dark-blue" | "light";
-export type displayValues = "big" | "small";
+export type displayValues = "big" | "medium" | "small";
 
 export type ButtonProps = {
   label: string;
