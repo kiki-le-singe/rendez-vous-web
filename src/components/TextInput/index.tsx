@@ -34,6 +34,7 @@ export default function TextInput({
   const classNameInput = `${hasIcons ? "width-icons" : ""}  ${
     isDisabled && disabledClassName
   } ${inputValue ? "isNotEmpty" : ""}`;
+  const classNameLabel = `label ${hasIcons ? "width-icons" : ""}`;
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
@@ -57,7 +58,7 @@ export default function TextInput({
       )}
 
       <div className="input-content">
-        {inputValue && <label className="label">{placeholder}</label>}
+        {inputValue && <label className={classNameLabel}>{placeholder}</label>}
         <input
           className={classNameInput}
           type={type}

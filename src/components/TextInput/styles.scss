@@ -36,6 +36,10 @@
     line-height: 16px;
     color: colors.$placeholder;
     padding-left: 12px;
+
+    &.width-icons {
+      padding-left: 0;
+    }
   }
 
   input {
