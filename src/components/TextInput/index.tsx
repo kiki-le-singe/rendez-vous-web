@@ -33,7 +33,7 @@ export default function TextInput({
   } ${isDisabled && disabledClassName} ${isCreateModeEnabled ? "create" : ""}`;
   const classNameInput = `${hasIcons ? "width-icons" : ""}  ${
     isDisabled && disabledClassName
-  }`;
+  } ${inputValue ? "isNotEmpty" : ""}`;
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
@@ -56,14 +56,17 @@ export default function TextInput({
         </div>
       )}
 
-      <input
-        className={classNameInput}
-        type={type}
-        placeholder={placeholder}
-        disabled={isDisabled}
-        onChange={handleChange}
-        value={inputValue}
-      />
+      <div className="input-content">
+        {inputValue && <label className="label">{placeholder}</label>}
+        <input
+          className={classNameInput}
+          type={type}
+          placeholder={placeholder}
+          disabled={isDisabled}
+          onChange={handleChange}
+          value={inputValue}
+        />
+      </div>
 
       {isCreateModeEnabled && (
         <div className="button-container">
