@@ -1,0 +1,51 @@
+@use "../../styles/colors.scss";
+
+$border: 1px solid colors.$border-color;
+
+.DoubleInputs-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+
+  .inputs {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    height: 48px;
+    background-color: colors.$background-white-color;
+    border: $border;
+    border-radius: 6px;
+    overflow: hidden;
+
+    &.big {
+      width: 216px;
+    }
+
+    &.small {
+      width: 110px;
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      text-align: center;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 16px;
+      color: colors.$text-color;
+
+      &:first-of-type {
+        border-right: $border;
+      }
+    }
+  }
+
+  span {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: colors.$border-color-dark;
+  }
+}

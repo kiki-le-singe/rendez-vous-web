@@ -10,6 +10,8 @@ import Icon from "../Icon";
 import IconButton from "../IconButton";
 import Tabs from "../Tabs";
 import genderIcon from "../../assets/svg/gender.svg";
+import bdayIcon from "../../assets/svg/bday.svg";
+import DoubleInputs from "../DoubleInputs";
 
 const tabsData = ["Homme", "Femme", "Enfant"];
 
@@ -57,7 +59,10 @@ function ClientContainer() {
 
       {isCreateModeEnabled && (
         <div className="create-client-container">
-          <Tabs labels={tabsData} icon={genderIcon} />
+          <div className="step">
+            <Tabs labels={tabsData} icon={genderIcon} />
+            <DoubleInputs icon={bdayIcon} />
+          </div>
         </div>
       )}
     </Card>

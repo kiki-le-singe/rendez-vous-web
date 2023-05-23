@@ -11,7 +11,13 @@
 
   .create-client-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 16px;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
   }
 }
