@@ -14,9 +14,16 @@ export default function TextInput({
   isCreateMode = false,
   value = "",
   onClick = () => {},
+  isReseted = false,
 }: TextInputProps) {
   const [inputValue, setInputValue] = React.useState(value);
   const [isTyping, setIsTyping] = React.useState(false);
+
+  React.useEffect(() => {
+    if (isReseted) {
+      setInputValue("");
+    }
+  }, [isReseted]);
 
   const isCreateModeEnabled = isCreateMode && isTyping;
   const hasIcons = icon || secondIcon;
@@ -33,6 +40,11 @@ export default function TextInput({
 
     setIsTyping(value ? true : false);
     setInputValue(value);
+  }
+
+  function handleClick() {
+    setIsTyping(false);
+    onClick();
   }
 
   return (
@@ -55,12 +67,7 @@ export default function TextInput({
 
       {isCreateModeEnabled && (
         <div className="button-container">
-          <Button
-            display="small"
-            onClick={onClick}
-            label="Créer"
-            theme="green"
-          />
+          <Button onClick={handleClick} label="Créer" theme="green" />
         </div>
       )}
     </div>
