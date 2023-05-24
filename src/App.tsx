@@ -2,9 +2,9 @@ import React from "react";
 import "./App.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Card from "./components/Card";
 import ClientContainer from "./components/ClientContainer";
 import CalendardContainer from "./components/CalendardContainer";
+import ServicesContainer from "./components/ServicesContainer";
 
 function App() {
   return (
@@ -14,12 +14,8 @@ function App() {
 
         <div className="View-content">
           <ClientContainer />
-
           <CalendardContainer />
-
-          <Card>
-            <p>Card Content</p>
-          </Card>
+          <ServicesContainer />
         </div>
 
         <Footer />

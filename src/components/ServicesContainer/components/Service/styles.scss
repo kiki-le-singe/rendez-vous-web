@@ -1,0 +1,12 @@
+@use "../../../../styles/colors.scss";
+
+.Service {
+  gap: 12;
+  flex-direction: row;
+  justify-content: center;
+
+  .selects {
+    gap: 16px;
+    padding-top: 48px;
+  }
+}

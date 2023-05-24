@@ -1,0 +1,24 @@
+@use "../../styles/colors.scss";
+
+.Services {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .add-service-container {
+    gap: 10px;
+    flex-direction: row;
+    border-width: 1px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 18px;
+    border-style: dashed;
+  }
+
+  .add-text {
+    color: colors.$border-color-dark;
+    font-weight: 600;
+    font-size: 13px;
+  }
+}
