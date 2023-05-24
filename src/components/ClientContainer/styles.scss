@@ -36,6 +36,28 @@
         cursor: pointer;
       }
     }
+
+    &.specialities-container {
+      gap: 20px;
+
+      .speciality {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+
+        .ButtonLink {
+          padding: 0;
+        }
+      }
+
+      span.infos {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        color: colors.$border-color-dark;
+      }
+    }
   }
 
   .info-client {

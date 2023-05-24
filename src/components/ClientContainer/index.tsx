@@ -12,6 +12,8 @@ import Tabs from "../Tabs";
 import genderIcon from "../../assets/svg/gender.svg";
 import bdayIcon from "../../assets/svg/bday.svg";
 import infosIcon from "../../assets/svg/infos.svg";
+import cardIcon from "../../assets/svg/card.svg";
+import copyIcon from "../../assets/svg/copy.svg";
 import DoubleInputs from "../DoubleInputs";
 import Switch from "../Switch";
 import ButtonLink from "../ButtonLink";
@@ -95,6 +97,20 @@ function ClientContainer() {
                 </p>
               </div>
             )}
+          </div>
+
+          <div className="step specialities-container">
+            <div className="speciality">
+              <ButtonLink icon={cardIcon} text="Carte de fidélité" />
+              <span className="infos">: Points : 42 - Gains : 10,00€ (+)</span>
+            </div>
+            <div className="speciality">
+              <ButtonLink
+                icon={copyIcon}
+                text="Forfait brushing par 5 - cheveux courts"
+              />
+              <span className="infos">(4)</span>
+            </div>
           </div>
         </div>
       )}
