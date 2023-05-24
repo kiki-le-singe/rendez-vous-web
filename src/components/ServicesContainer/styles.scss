@@ -6,14 +6,24 @@
   gap: 16px;
 
   .add-service-container {
-    gap: 10px;
-    flex-direction: row;
-    border-width: 1px;
-    border-radius: 8px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 18px;
-    border-style: dashed;
+    padding: 16px 18px;
+    border: 1px dashed colors.$border-dashed;
+    border-radius: 6px;
+
+    .ButtonLink {
+      padding: 0;
+      text-decoration: none;
+
+      .label {
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 20px;
+        color: #5f706a;
+      }
+    }
   }
 
   .add-text {

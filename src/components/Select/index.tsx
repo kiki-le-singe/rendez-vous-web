@@ -1,5 +1,8 @@
-import React, { ChangeEvent } from "react";
+import React from "react";
 import { SelectProps, ThemeSelect } from "./types";
+import "./styles.scss";
+import Icon from "../Icon";
+import dropDownArrowIcon from "../../assets/svg/dropDownArrow.svg";
 
 export default function Select({
   placeholder,
@@ -10,43 +13,64 @@ export default function Select({
   onResetSelect,
   onSelectOption,
 }: SelectProps) {
+  const [selectedIndexOption, setSelectedIndexOption] = React.useState(0);
   const [selectedOption, setSelectedOption] = React.useState("");
+  const [isOpen, setIsOpen] = React.useState(false);
 
-  const handleOptionChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const value = e.target.value;
+  const isFirstOption = selectedIndexOption === 0;
 
-    setSelectedOption(value);
-    onSelectOption(Number(value));
+  const handleSelectOption = (item: string, index: number) => {
+    setSelectedIndexOption(index);
+    setSelectedOption(item);
+    onSelectOption(index);
+    setIsOpen(false);
   };
 
-  function handleClosePress(item: string) {
-    setSelectedOption(item);
+  function handleClosePress() {
+    setIsOpen(false);
+    setSelectedIndexOption(0);
+    setSelectedOption("");
     onResetSelect(false);
+  }
+
+  function handleOpenOptions() {
+    setIsOpen(true);
   }
 
   function renderOptions(item: string, index: number) {
     return (
-      <option key={`Option_${index}`} value={index}>
+      <div
+        onClick={() => handleSelectOption(item, index)}
+        className="option"
+        key={`Option_${index}`}
+      >
         {item}
-      </option>
+      </div>
     );
   }
 
   React.useEffect(() => {
     if (selectedOption && isReset) {
-      handleClosePress("");
+      handleClosePress();
     }
   }, [selectedOption, isReset]);
 
   return (
-    <div className="custom-select">
-      <select
-        className="Select"
-        value={selectedOption}
-        onChange={handleOptionChange}
-      >
-        {values.map(renderOptions)}
-      </select>
+    <div className="Select-container">
+      <div className="select" onClick={handleOpenOptions}>
+        {!isFirstOption && <div className={`left ${theme}`} />}
+        <div className="middle">
+          {!isFirstOption && <span className="placeholder">{selectLabel}</span>}
+          <span className="value">
+            {isFirstOption ? placeholder : selectedOption}
+          </span>
+        </div>
+        <div className="right">
+          <Icon icon={dropDownArrowIcon} />
+        </div>
+      </div>
+
+      {isOpen && <div className="options">{values.map(renderOptions)}</div>}
     </div>
   );
 }

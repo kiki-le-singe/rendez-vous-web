@@ -5,10 +5,14 @@ import Select from "../../../Select";
 import { ThemeSelect } from "../../../Select/types";
 import IconButton from "../../../IconButton";
 import binIcon from "../../../../assets/svg/bin.svg";
+import iconPaper from "../../../../assets/svg/paper.svg";
+import "./styles.scss";
+import Icon from "../../../Icon";
 
 const dataServices = [
   "Choisir une prestation",
   "Coupe homme (cheveux courts)",
+  "Coupe + Balayage + Couleur + Shampoing + Mise en pli (cheveux longs & épais)",
   "Coloration",
   "Coupe barbe",
   "Coupe femme (cheveux courts)",
@@ -57,7 +61,15 @@ const Service = ({ index, servicesLength, removeService }: ServiceProps) => {
       ((selectedOption1 > 0 || selectedOption2 > 0) && servicesLength === 1) ||
       servicesLength > 1
     ) {
-      return <IconButton onClick={handleCleanService} icon={binIcon} />;
+      return (
+        <div className="infos">
+          <IconButton
+            display="medium"
+            onClick={handleCleanService}
+            icon={binIcon}
+          />
+        </div>
+      );
     }
 
     return null;
@@ -65,7 +77,7 @@ const Service = ({ index, servicesLength, removeService }: ServiceProps) => {
 
   return (
     <div className="Service">
-      <div>CIcon</div>
+      <Icon icon={iconPaper} />
 
       <div className="selects">
         <Select
