@@ -13,11 +13,13 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
   }
 
   .step {
     display: flex;
     flex-direction: row;
     gap: 18px;
+    padding-left: 36px;
   }
 }

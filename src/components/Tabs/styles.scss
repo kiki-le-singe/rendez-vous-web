@@ -19,6 +19,7 @@ $border: $borderWidth solid $borderColor;
   flex-direction: row;
   align-items: center;
   gap: 10px;
+  width: 317px;
 
   .items {
     @include border-left-radius;
@@ -28,6 +29,7 @@ $border: $borderWidth solid $borderColor;
     flex-direction: row;
     list-style-type: none;
     border: $border;
+    width: 100%;
   }
 
   .first-tab {
