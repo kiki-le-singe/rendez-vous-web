@@ -11,16 +11,28 @@ import IconButton from "../IconButton";
 import Tabs from "../Tabs";
 import genderIcon from "../../assets/svg/gender.svg";
 import bdayIcon from "../../assets/svg/bday.svg";
+import infosIcon from "../../assets/svg/infos.svg";
 import DoubleInputs from "../DoubleInputs";
 import Switch from "../Switch";
+import ButtonLink from "../ButtonLink";
 
 const tabsData = ["Homme", "Femme", "Enfant"];
 
 function ClientContainer() {
   const [isCreateModeEnabled, setIsCreateModeEnabled] = React.useState(false);
+  const [isInfoToggle, setIsInfoToggle] = React.useState(false);
+
+  const infosToggleProps = {
+    onClick: handleInfoToggle,
+    icon: infosIcon,
+  };
 
   function handleCreateMode(isEnabled = true) {
     setIsCreateModeEnabled(isEnabled);
+  }
+
+  function handleInfoToggle() {
+    setIsInfoToggle(!isInfoToggle);
   }
 
   return (
@@ -65,6 +77,24 @@ function ClientContainer() {
             <DoubleInputs icon={bdayIcon} />
             <Switch id="sms-rappel" label="SMS de rappel" checked />
             <Switch id="sms-marketing" label="SMS marketing" />
+          </div>
+
+          <div className="step info-client-container">
+            {!isInfoToggle ? (
+              <ButtonLink text="Info client" {...infosToggleProps} />
+            ) : (
+              <Icon {...infosToggleProps} />
+            )}
+
+            {isInfoToggle && (
+              <div className="info-client">
+                <span>Info client</span>
+                <p>
+                  Quam inposita tranquillis pleraeque sunt primigenia eis quae
+                  institutores ad.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       )}

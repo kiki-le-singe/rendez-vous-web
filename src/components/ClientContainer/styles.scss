@@ -1,3 +1,5 @@
+@use "../../styles/colors.scss";
+
 .Client-container {
   gap: 16px;
 
@@ -19,7 +21,42 @@
   .step {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 18px;
     padding-left: 36px;
+
+    &.info-client-container {
+      gap: 8px;
+
+      .ButtonLink {
+        padding-left: 0;
+      }
+
+      .Icon {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .info-client {
+    flex: 1;
+    padding: 10px 12px;
+    background: colors.$background-white-color;
+    border: 1px solid colors.$border-color;
+    border-radius: 6px;
+
+    span {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      color: colors.$placeholder;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 16px;
+      color: colors.$text-color;
+    }
   }
 }
