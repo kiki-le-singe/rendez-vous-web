@@ -14,10 +14,40 @@
     flex: 0.6;
   }
 
+  .box {
+    display: flex;
+    flex-direction: row;
+
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 16px;
+      color: colors.$text-color;
+      height: 48px;
+      border: 1px solid colors.$border-color;
+    }
+
+    .left {
+      width: 71px;
+      background: colors.$background-white-color;
+      border-radius: 5px 0px 0px 5px;
+    }
+
+    .right {
+      width: 48px;
+      background: colors.$light-grey;
+      border-left: 0;
+      border-radius: 0px 5px 5px 0px;
+    }
+  }
+
   .infos {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: end;
     gap: 16px;
     flex: 0.4;

@@ -62,13 +62,18 @@ const Service = ({ index, servicesLength, removeService }: ServiceProps) => {
       servicesLength > 1
     ) {
       return (
-        <div className="infos">
+        <>
+          <div className="box price">
+            <div className="item left">60</div>
+            <div className="item right">€</div>
+          </div>
+
           <IconButton
             display="medium"
             onClick={handleCleanService}
             icon={binIcon}
           />
-        </div>
+        </>
       );
     }
 
@@ -99,7 +104,14 @@ const Service = ({ index, servicesLength, removeService }: ServiceProps) => {
         />
       </div>
 
-      {renderRightElements()}
+      <div className="infos">
+        <div className="box time">
+          <div className="item left">60</div>
+          <div className="item right">Min</div>
+        </div>
+
+        {renderRightElements()}
+      </div>
     </div>
   );
 };
