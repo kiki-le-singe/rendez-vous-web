@@ -1,4 +1,5 @@
 @use "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
 
 .Select-container {
   display: flex;
@@ -34,16 +35,16 @@
       padding-left: 8px;
 
       .placeholder {
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
+        @include regular-font;
+        @include small-size;
+
         color: colors.$placeholder;
       }
 
       .value {
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 16px;
+        @include regular-font;
+        @include normal-size;
+
         color: colors.$text-color;
       }
     }
@@ -71,10 +72,10 @@
     padding: 8px;
 
     .option {
+      @include regular-font;
+      @include normal-size;
+
       cursor: pointer;
-      font-weight: 400;
-      font-size: 13px;
-      line-height: 16px;
       color: colors.$placeholder;
 
       &:hover {

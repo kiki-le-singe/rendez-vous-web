@@ -1,14 +1,15 @@
 @use "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
 
 .Button {
+  @include semibold-font;
+  @include normal-size;
+
   padding: 10px;
   border: none;
   cursor: pointer;
   border-radius: 6px;
   color: colors.$background-white-color;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 16px;
 
   &.green {
     background-color: colors.$green;

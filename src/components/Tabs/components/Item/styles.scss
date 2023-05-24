@@ -1,4 +1,5 @@
 @use "../../../../styles/colors.scss";
+@import "../../../../styles/fonts.scss";
 
 .Tab-item {
   flex: 1;
@@ -14,10 +15,10 @@
   }
 
   .label {
+    @include regular-font;
+    @include normal-size;
+
     text-align: center;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
     color: colors.$placeholder;
 
     &.selected-label {

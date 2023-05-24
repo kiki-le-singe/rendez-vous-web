@@ -1,12 +1,14 @@
 @use "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
 
 .Checkbox-container {
+  @include semibold-font;
+
   display: block;
   position: relative;
   padding-left: 20px;
   cursor: pointer;
   user-select: none;
-  font-weight: 600;
   font-size: 13px;
 
   input {

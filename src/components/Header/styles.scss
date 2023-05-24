@@ -1,4 +1,5 @@
 @use "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
 
 .App-header {
   display: flex;
@@ -11,8 +12,9 @@
   padding: 0px 28px;
 
   .title {
+    @include semibold-font;
+
     flex: 1;
-    font-weight: 600;
     font-size: 15px;
     line-height: 24px;
     color: colors.$text-color;

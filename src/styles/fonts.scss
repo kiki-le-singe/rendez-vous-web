@@ -1,0 +1,17 @@
+@mixin regular-font {
+  font-weight: 400;
+}
+
+@mixin semibold-font {
+  font-weight: 600;
+}
+
+@mixin normal-size {
+  font-size: 13px;
+  line-height: 16px;
+}
+
+@mixin small-size {
+  font-size: 12px;
+  line-height: 16px;
+}
