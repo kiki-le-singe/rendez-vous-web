@@ -27,11 +27,8 @@ const dataCollaborators = [
 
 const Service = ({ index, servicesLength, removeService }: ServiceProps) => {
   const [isReset, setIsReset] = React.useState(false);
-  const [selectedOption, setSelectedOption] = React.useState(0);
-
-  React.useEffect(() => {
-    console.log("selectedOption", selectedOption);
-  }, [selectedOption]);
+  const [selectedOption1, setSelectedOption1] = React.useState(0);
+  const [selectedOption2, setSelectedOption2] = React.useState(0);
 
   function handleResetSelect(isReset: boolean) {
     setIsReset(isReset);
@@ -43,21 +40,27 @@ const Service = ({ index, servicesLength, removeService }: ServiceProps) => {
     } else {
       handleResetSelect(true);
     }
-    setSelectedOption(0);
+    setSelectedOption1(0);
+    setSelectedOption2(0);
   }
 
-  function handleSelectOption(value: number) {
-    setSelectedOption(value);
+  function handleSelectOption1(value: number) {
+    setSelectedOption1(value);
+  }
+
+  function handleSelectOption2(value: number) {
+    setSelectedOption2(value);
   }
 
   function renderRightElements() {
-    if (selectedOption === 0 && servicesLength === 1) {
-      return null;
-    }
-
-    if (selectedOption !== 0 || servicesLength > 1) {
+    if (
+      ((selectedOption1 > 0 || selectedOption2 > 0) && servicesLength === 1) ||
+      servicesLength > 1
+    ) {
       return <IconButton onClick={handleCleanService} icon={binIcon} />;
     }
+
+    return null;
   }
 
   return (
@@ -72,7 +75,7 @@ const Service = ({ index, servicesLength, removeService }: ServiceProps) => {
           theme={ThemeSelect.GREEN}
           isReset={isReset}
           onResetSelect={handleResetSelect}
-          onSelectOption={handleSelectOption}
+          onSelectOption={handleSelectOption1}
         />
         <Select
           values={dataCollaborators}
@@ -80,7 +83,7 @@ const Service = ({ index, servicesLength, removeService }: ServiceProps) => {
           placeholder="Choisir un collaborateur"
           isReset={isReset}
           onResetSelect={handleResetSelect}
-          onSelectOption={handleSelectOption}
+          onSelectOption={handleSelectOption2}
         />
       </div>
 
