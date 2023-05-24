@@ -60,6 +60,10 @@
     &.disabled {
       background-color: colors.$border-color;
     }
+
+    &.noLabelDisplayedWithValue {
+      height: 100%;
+    }
   }
 
   input::placeholder {

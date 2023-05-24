@@ -15,6 +15,7 @@ export default function TextInput({
   value = "",
   onClick = () => {},
   isReseted = false,
+  isLabelDisplayedWithValue = true,
 }: TextInputProps) {
   const [inputValue, setInputValue] = React.useState(value);
   const [isTyping, setIsTyping] = React.useState(false);
@@ -29,11 +30,15 @@ export default function TextInput({
   const hasIcons = icon || secondIcon;
   const disabledClassName = "disabled";
   const classNameContainer = `TextInput-container ${
-    isMaxWidthEnabled && "max-width"
-  } ${isDisabled && disabledClassName} ${isCreateModeEnabled ? "create" : ""}`;
+    isMaxWidthEnabled ? "max-width" : ""
+  } ${isDisabled ? disabledClassName : ""} ${
+    isCreateModeEnabled ? "create" : ""
+  }`;
   const classNameInput = `${hasIcons ? "width-icons" : ""}  ${
-    isDisabled && disabledClassName
-  } ${inputValue ? "isNotEmpty" : ""}`;
+    isDisabled ? disabledClassName : ""
+  } ${inputValue ? "isNotEmpty" : ""} ${
+    !isLabelDisplayedWithValue ? "noLabelDisplayedWithValue" : ""
+  }`;
   const classNameLabel = `label ${hasIcons ? "width-icons" : ""}`;
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
@@ -58,7 +63,9 @@ export default function TextInput({
       )}
 
       <div className="input-content">
-        {inputValue && <label className={classNameLabel}>{placeholder}</label>}
+        {isLabelDisplayedWithValue && inputValue && (
+          <label className={classNameLabel}>{placeholder}</label>
+        )}
         <input
           className={classNameInput}
           type={type}

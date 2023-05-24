@@ -10,5 +10,6 @@ export type TextInputProps = React.PropsWithChildren<{
   isMaxWidthEnabled?: boolean;
   isCreateMode?: boolean;
   isReseted?: boolean;
+  isLabelDisplayedWithValue?: boolean;
   onClick?: () => void;
 }>;
