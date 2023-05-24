@@ -17,5 +17,15 @@
     flex-direction: column;
     padding: 20px 28px;
     gap: 16px;
+
+    .bottom-actions {
+      display: flex;
+      flex-direction: row;
+      gap: 18px;
+
+      .ButtonLink {
+        padding: 0;
+      }
+    }
   }
 }
