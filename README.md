@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Installation
+
+```shell
+$ git clone https://github.com/kiki-le-singe/rendez-vous-web.git <name>
+$ cd <name>
+$ npm install
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
